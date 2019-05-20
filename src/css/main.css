@@ -60,7 +60,12 @@ moz-::selection{
 main div{
 	margin: 2em 0;
 }
-
+#class-shown{
+	color: white;
+}
+#icon-class{
+	color: white;
+}
 .wrap{
 	margin:0 auto 50px ;
 	max-width:70%;
