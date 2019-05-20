@@ -1,3 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="robots" content="index, follow">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<meta name="description" content="A light-weight and browser friendly CSS library to add Zimbabwe's popular logos to your web pages. Without any javascript, iZambezi.css is class-based and animation ready.">
+	<title>Documentation — CSS library for Zimbabwe's popular logos</title>
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="src/css/main.css">
+	<link rel="stylesheet" href="src/css/bootstrap.min.css">	
+	<link rel="stylesheet" href="src/vendors/notifier/notifier.css">
+	<link rel="stylesheet" href="src/css/balloon.min.css">
+	<link rel="stylesheet" href="izambezi.min.css">
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+<p>
 AA Zimbabwe
 African Distilers
 Apostolic Faith Mission
@@ -131,6 +152,12 @@ NPRC
 Norman Richards Group (NRG)
 National Railways of Zimbabwe (NRZ)
 National Social Security Authority (NSSA)
-
+</p>
+<script src="src/js/jquery-3.2.1.min.js" charset="utf-8" async defer></script>
+	<script src="src/vendors/clipboard/clipboard.min.js" charset="utf-8" async defer></script>
+	<script src="src/vendors/notifier/notifier.js" charset="utf-8" async defer></script>
+	
+</body>
+</html>
 
 
