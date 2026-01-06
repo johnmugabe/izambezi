@@ -1,0 +1,63 @@
+{
+  "name": "izambezi",
+  "version": "2.0.0",
+  "description": "A lightweight CSS library for Zimbabwe's popular logos and brands. Class-based, animation-ready, and zero JavaScript required.",
+  "main": "dist/izambezi.js",
+  "module": "dist/izambezi.esm.js",
+  "types": "dist/izambezi.d.ts",
+  "style": "dist/izambezi.min.css",
+  "files": [
+    "dist/",
+    "icons/",
+    "src/"
+  ],
+  "scripts": {
+    "build:css": "sass src/scss/izambezi.scss dist/izambezi.css && postcss dist/izambezi.css -o dist/izambezi.min.css",
+    "build:js": "rollup -c rollup.config.js",
+    "build:icons": "node scripts/generate-icons.js",
+    "build": "npm run build:css && npm run build:js",
+    "watch": "sass --watch src/scss/izambezi.scss dist/izambezi.css",
+    "dev": "npm run watch",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"No tests yet\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnmugabe/izambezi.git"
+  },
+  "keywords": [
+    "css",
+    "icons",
+    "logos",
+    "zimbabwe",
+    "brands",
+    "library",
+    "css-library",
+    "icon-font",
+    "animations"
+  ],
+  "author": "John Mugabe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/johnmugabe/izambezi/issues"
+  },
+  "homepage": "https://johnmugabe.github.io/izambezi/",
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "cssnano": "^6.0.1",
+    "postcss": "^8.4.31",
+    "postcss-cli": "^10.1.0",
+    "rollup": "^4.1.4",
+    "sass": "^1.69.5"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "jsdelivr": "dist/izambezi.min.css",
+  "unpkg": "dist/izambezi.min.css",
+  "sideEffects": [
+    "*.css"
+  ]
+}

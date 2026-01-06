@@ -1,0 +1,48 @@
+// ============================================
+// iZambezi Mixins
+// ============================================
+
+@use 'variables' as *;
+
+// Base icon mixin
+@mixin izambezi-icon-base {
+  display: inline-block;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin-top: 1px;
+}
+
+// Size mixin
+@mixin izambezi-size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+// Icon generator mixin
+@mixin izambezi-icon($name, $path: $izambezi-icon-path) {
+  .#{$name} {
+    background-image: url('#{$path}#{$name}.png');
+    
+    // SVG fallback with PNG fallback for older browsers
+    &.zw-svg {
+      background: url('#{$path}#{$name}.png');
+      background-image: url('#{$path}#{$name}.svg'), none;
+    }
+  }
+}
+
+// Animation mixin
+@mixin izambezi-animation($name, $duration: $izambezi-animation-duration) {
+  animation-name: $name;
+  animation-duration: $duration;
+  animation-fill-mode: both;
+}
+
+// Keyframe generator mixin
+@mixin izambezi-keyframes($name) {
+  @keyframes #{$name} {
+    @content;
+  }
+}

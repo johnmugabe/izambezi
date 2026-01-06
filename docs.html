@@ -1,195 +1,580 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta name="robots" content="index, follow">
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
-	<meta name="description" content="A light-weight and browser friendly CSS library to add Zimbabwe's popular logos to your web pages. Without any javascript, iZambezi.css is class-based and animation ready.">
-	<meta name="robots" content="index, follow">
-	<meta name="description" content="A light-weight and browser friendly CSS library to add Zimbabwe's popular logos to your web pages. Without any javascript, iZambezi.css is class-based and animation ready.">
-	 <meta property="og:locale" content="en_US" />
-    	<meta property="og:type" content="website" />
-    	<meta property="og:title" content="Documentation — CSS library for Zimbabwe's popular logos" />
-    	<meta property="og:description" content="A light-weight and browser friendly CSS library to add Zimbabwe's popular logos to your web pages. Without any javascript, iZambezi.css is class-based and animation ready." />
-    	<meta property="og:url" content="https://johnmugabe.github.io/izambezi/" />
-    	<meta property="og:site_name" content="Documentation — CSS library for Zimbabwe's popular logos" />
-    	<meta name="twitter:card" content="summary_large_image" />
-    	<meta name="twitter:title" content="Documentation — CSS library for Zimbabwe's popular logos" />
-    	<meta name="twitter:description" content="A light-weight and browser friendly CSS library to add Zimbabwe's popular logos to your web pages. Without any javascript, iZambezi.css is class-based and animation ready." />
-	
-	<title>Documentation — CSS library for Zimbabwe's popular logos</title>
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
-	<link rel="stylesheet" href="src/css/main.css">
-	<link rel="stylesheet" href="src/css/bootstrap.min.css">	
-	<link rel="stylesheet" href="src/vendors/notifier/notifier.css">
-	<link rel="stylesheet" href="src/css/balloon.min.css">
-	<link rel="stylesheet" href="izambezi.min.css">
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="Documentation for iZambezi.css - A lightweight CSS library to add Zimbabwe's popular logos to your web pages. Class-based, animation-ready, and zero JavaScript required.">
+  <meta name="keywords" content="iZambezi, CSS library, Zimbabwe logos, icons, brands, CSS icons">
+  
+  <!-- Open Graph -->
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="iZambezi.css Documentation — CSS library for Zimbabwe's popular logos">
+  <meta property="og:description" content="A lightweight CSS library to add Zimbabwe's popular logos to your web pages. Class-based, animation-ready, and zero JavaScript required.">
+  <meta property="og:url" content="https://johnmugabe.github.io/izambezi/">
+  <meta property="og:site_name" content="iZambezi.css">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="iZambezi.css Documentation">
+  <meta name="twitter:description" content="A lightweight CSS library to add Zimbabwe's popular logos to your web pages.">
+  
+  <title>Documentation — iZambezi.css</title>
+  
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  
+  <!-- iZambezi CSS -->
+  <link rel="stylesheet" href="izambezi.min.css">
+  
+  <!-- Documentation Styles -->
+  <style>
+    :root {
+      --primary-color: #1bc1a1;
+      --secondary-color: #42b983;
+      --text-color: #34495e;
+      --bg-color: #fff;
+      --code-bg: rgba(232, 245, 242, 0.5);
+      --border-color: rgba(128, 128, 128, 0.2);
+    }
+    
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      margin: 0;
+      padding: 0;
+    }
+    
+    /* Header */
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    
+    .header h1 {
+      font-size: 3rem;
+      margin: 0 0 1rem;
+      font-weight: 800;
+    }
+    
+    .header p {
+      font-size: 1.25rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      margin: 0.5rem;
+      transition: all 0.2s ease;
+    }
+    
+    .btn-primary {
+      background: white;
+      color: #667eea;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid rgba(255,255,255,0.5);
+    }
+    
+    .btn-secondary:hover {
+      border-color: white;
+    }
+    
+    /* Navigation */
+    .nav {
+      background: #f8f9fa;
+      border-bottom: 1px solid var(--border-color);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+    
+    .nav a {
+      color: var(--text-color);
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+    
+    .nav a:hover {
+      background: var(--code-bg);
+      color: var(--primary-color);
+    }
+    
+    /* Main Content */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    
+    section {
+      margin-bottom: 4rem;
+      padding-top: 2rem;
+    }
+    
+    h2 {
+      color: var(--primary-color);
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    h3 {
+      color: var(--secondary-color);
+      margin-top: 2rem;
+    }
+    
+    /* Code blocks */
+    code {
+      background: var(--code-bg);
+      padding: 0.2em 0.4em;
+      border-radius: 3px;
+      font-family: 'Fira Code', 'Consolas', monospace;
+      font-size: 0.9em;
+      color: var(--primary-color);
+    }
+    
+    pre {
+      background: #2d3748;
+      color: #e2e8f0;
+      padding: 1.5rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      position: relative;
+    }
+    
+    pre code {
+      background: none;
+      padding: 0;
+      color: inherit;
+    }
+    
+    .copy-btn {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      background: rgba(255,255,255,0.1);
+      border: none;
+      color: #a0aec0;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.8rem;
+    }
+    
+    .copy-btn:hover {
+      background: rgba(255,255,255,0.2);
+      color: white;
+    }
+    
+    /* Demo boxes */
+    .demo-box {
+      background: #f8f9fa;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 2rem;
+      margin: 1rem 0;
+      text-align: center;
+    }
+    
+    .demo-box i {
+      margin: 0.5rem;
+    }
+    
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+    
+    th, td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border-color);
+    }
+    
+    th {
+      background: #f8f9fa;
+      font-weight: 600;
+    }
+    
+    /* Utilities */
+    .text-center { text-align: center; }
+    .mt-2 { margin-top: 2rem; }
+    .mb-2 { margin-bottom: 2rem; }
+    
+    /* Footer */
+    footer {
+      background: #2d3748;
+      color: #a0aec0;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    
+    footer a {
+      color: var(--primary-color);
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 2rem;
+      }
+      
+      .container {
+        padding: 1rem;
+      }
+      
+      pre {
+        font-size: 0.85rem;
+      }
+    }
+  </style>
 </head>
 <body>
-	<header class="header  header-colorful docs text-center">
-		<h1 class="title">Documentation</h1>
-		<h2 class="subtitle mt-4">CSS library for Zimbabwe's popular Logos</h2>
-		<!-- Documentation & download buttons -->
-		<p class="doc-btn">
-			<a class="btn btn-outline-secondary mx-1" href="index.html" role="button">Back to Home</a>
-		</p>
-	</header>
-	<!-- Main content -->
-	<main class="wrap">
-		<!-- Getting Started  -->
-		<div id="getting-started">
-			<h3>Getting Started</h3>
-			<p>
-				Looking to add iZambezi.css to your webpages? Simply copy-paste the stylesheet <code>&lt;link&gt;</code> into your <code>&lt;head&gt;</code> before all other stylesheets to load our CSS. 
-			</p>
-			<!-- Stylesheet link -->
-			<p data-balloon="Copy to clipboard" data-balloon-pos="up" data-clipboard-action="copy" data-clipboard-target=".link-copy" class="code-example-link link-copy">
-				&lt;<span class="code-example-tag-type">link</span><span class="code-example-class-text"> rel="</span><span  class="code-example-class">stylesheet</span><span class="code-example-class-text">"</span> <span class="code-example-class-text"> href="</span><span  class="code-example-class">https://johnmugabe.github.io/izambezi/izambezi.min.css</span><span class="code-example-class-text">"</span>&gt;
-			</p> 
-		</div>
-		<!-- Usage -->
-		<div id="usage">
-			<h5>Usage</h5>
-			<p>Adding iZambezi elements to your webpage implements the <code>&lt;i&gt;</code> tag. </p>
-			<!-- Example code -->
-			<p class="code-example">
-				&lt;<span class="code-example-tag-type">i</span><span class="code-example-class-text"> class="</span><span  class="code-example-class">izambezi muzinda-hub</span><span class="code-example-class-text">"</span>&gt;&lt;<span class="code-example-tag-type">/i</span>&gt;
-			</p>
-			<p>
-				<i class="izambezi muzinda"></i>
-				<code>.izambezi [logo-name]</code>
-			</p>
-			<p>
-				The class name <code>.izambezi</code> is the default caller for the library. Class name <code>.muzinda</code> is called to display the <a href="#" target="_blank">MuzindaHub</a> logo. 
-			</p>
-		</div>
-		<!-- Sizes -->
-		<div id=sizes">
-			<h5>Sizes</h5>
-			<p>
-				iZambezi elements have three size variations i.e <i>large</i>, <i>small</i> and the default size. Element sizing is achieved by adding a <code>-lg</code> or <code>-sm</code> suffix to the <code>izambezi</code> class. 
-			</p>
-			<!-- Example code -->
-			<p class="code-example">
-				&lt;<span class="code-example-tag-type">i</span><span class="code-example-class-text"> class="</span><span  class="code-example-class">izambezi-lg muzinda-hub</span><span class="code-example-class-text">"</span>&gt;&lt;<span class="code-example-tag-type">/i</span>&gt;
-			</p>
-		</div>
-		<p>
-			<i class="izambezi-lg muzinda"></i>
-			<code>-lg</code>
-		</p>
-		<!--Animations -->
-		<div id="animations">
-			<h5>Animations</h5>
-			<p>
-				To animate an element, add the class <code> .animated </code> to an element. You can include the class <code>.infinite </code>for an infinite loop. Finally you need to add one of the following classes to the element::
-			</p>
-			<ul>
-				<li><code>.bounce</code></li>
-				<li><code>.flash</code></li>
-				<li><code>.pulse</code></li>
-				<li><code>.heartBeat</code></li>
-				<li><code>.bounceIn</code></li>
-				<li><code>.fadeIn</code></li>
-				<li><code>.zoomIn</code></li>
-			</ul>
-			<!-- Example code -->
-			<p class="code-example">
-				&lt;<span class="code-example-tag-type">i</span><span class="code-example-class-text"> class="</span><span  class="code-example-class">izambezi muzinda-hub animated infinite pulse</span><span class="code-example-class-text">"</span>&gt;&lt;<span class="code-example-tag-type">/i</span>&gt;
-			</p>
-		</div>
-		<p>
-			<i class="izambezi muzinda animated infinite pulse"></i>
-			<code>.pulse</code>
-		</p>
-		<!-- Delays -->
-		<div id="delays">
-			<h5>Delays</h5>
-			<p>
-				It's possible to add delays directly on the element's class attribute. Delays set the waiting-time (seconds) before animation begins. The delay class <code>.wait-?s</code> where ? is any number between 2 and 5 defines the delay time before animation begins.
-			</p>
-			<ul>
-				<li><code>.wait-2s</code></li>
-				<li><code>.wait-3s</code></li>
-				<li><code>.wait-4s</code></li>
-				<li><code>.wait-5s</code></li>
-			</ul>
-			<!-- Example code -->
-			<p class="code-example">
-				&lt;<span class="code-example-tag-type">i</span><span class="code-example-class-text"> class="</span><span  class="code-example-class">izambezi muzinda-hub animated pulse wait-4s</span><span class="code-example-class-text">"</span>&gt;&lt;<span class="code-example-tag-type">/i</span>&gt;
-			</p>
-		</div>
-		<!-- Speed -->
-		<div id="speed">
-			<h5>Speed</h5>
-			<p>
-				Animation speed can be controlled using speed specific classes. The below classes control the speed at which animations can run.
-			</p>
-			<ul>
-				<li><code>.slow</code></li>
-				<li><code>.slower</code></li>
-				<li><code>.fast</code></li>
-				<li><code>.faster</code></li>
-			</ul>
-			<!-- Example code -->
-			<p class="code-example">
-				&lt;<span class="code-example-tag-type">i</span><span class="code-example-class-text"> class="</span><span  class="code-example-class">izambezi muzinda-hub animated pulse faster wait-4s</span><span class="code-example-class-text">"</span>&gt;&lt;<span class="code-example-tag-type">/i</span>&gt;
-			</p>
-			<p>
-				<i class="izambezi muzinda animated infinite pulse faster"></i>
-				<code>.faster</code>
-			</p>
-		</div>
-		<hr>
-		<!-- Browser Support -->
-		<div class="text-center">
-		<h4 id="supported-browsers" >Supported Browsers</h4>
-		    <ul class="browser-list">
-		        <li class="browser-list-item">
-		          <a href="https://www.google.com.br/chrome/browser/desktop/" target="_blank">
-		            <i class="browser chrome"></i><small>Chrome</small>
-		          </a>
-		        </li>
-		        <li class="browser-list-item">
-		          <a href="https://www.mozilla.org/pt-BR/firefox/new/" target="_blank">
-		            <i class="browser firefox"></i><small>Firefox</small>
-		          </a>
-		        </li>
-		        <li class="browser-list-item">
-		          <a href="http://windows.microsoft.com/pt-br/internet-explorer/download-ie" target="_blank">
-		            <i class="browser ie"></i><small>IE9+</small>
-		          </a>
-		        </li>
-		        <li class="browser-list-item">
-		          <a href="http://www.opera.com/" target="_blank">
-		            <i class="browser opera"></i><small>Opera</small>
-		          </a>
-		        </li>
-		        <li class="browser-list-item">
-		          <a href="http://www.apple.com/br/safari/" target="_blank">
-		            <i class="browser safari"></i><small>Safari</small>
-		          </a>
-		        </li>
-		    </ul>
-		</div>
-	</main>
+  <!-- Header -->
+  <header class="header">
+    <h1>📚 iZambezi.css</h1>
+    <p>A lightweight CSS library for Zimbabwe's popular logos. Class-based, animation-ready, and zero JavaScript required.</p>
+    <div>
+      <a href="index.html" class="btn btn-primary">View Icons</a>
+      <a href="https://github.com/johnmugabe/izambezi" class="btn btn-secondary">GitHub</a>
+    </div>
+  </header>
+  
+  <!-- Navigation -->
+  <nav class="nav">
+    <ul>
+      <li><a href="#installation">Installation</a></li>
+      <li><a href="#usage">Usage</a></li>
+      <li><a href="#sizes">Sizes</a></li>
+      <li><a href="#animations">Animations</a></li>
+      <li><a href="#transforms">Transforms</a></li>
+      <li><a href="#javascript">JavaScript API</a></li>
+    </ul>
+  </nav>
+  
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Installation -->
+    <section id="installation">
+      <h2>Installation</h2>
+      
+      <h3>CDN (Recommended)</h3>
+      <p>The quickest way to get started. Add this to your HTML <code>&lt;head&gt;</code>:</p>
+      <pre><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/izambezi@latest/dist/izambezi.min.css"&gt;</code><button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+      
+      <h3>NPM</h3>
+      <p>Install via npm for modern build workflows:</p>
+      <pre><code>npm install izambezi</code><button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+      <p>Then import in your CSS or JavaScript:</p>
+      <pre><code>// In JavaScript/TypeScript
+import 'izambezi/dist/izambezi.min.css';
 
-	<script src="src/js/jquery-3.2.1.min.js" charset="utf-8" async defer></script>
-	<script src="src/vendors/clipboard/clipboard.min.js" charset="utf-8" async defer></script>
-	<script src="src/vendors/notifier/notifier.js" charset="utf-8" async defer></script>
-	<!--  Instantiate clipboard -->
-	 <script>
-    	var clipboard = new ClipboardJS('.link-copy');
-    	clipboard.on('success', function(e) {
-        	notifier.show('Well Done!', 'Successfuly copied to clipboard.', '', 'src/images/ok-48.png', 4000);  
-   		 });
-    	clipboard.on('error', function(e) {
-        	notifier.show('Sorry!', 'Could not complete your transaction.', '', 'src/images/error-48.png', 4000);
-   		 });
-    </script>
+// Or in SCSS
+@import 'izambezi/src/scss/izambezi';</code><button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+      
+      <h3>Download</h3>
+      <p>Download the CSS file directly and include it in your project:</p>
+      <pre><code>&lt;link rel="stylesheet" href="path/to/izambezi.min.css"&gt;</code><button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+    </section>
+    
+    <!-- Usage -->
+    <section id="usage">
+      <h2>Basic Usage</h2>
+      <p>Add iZambezi icons using the <code>&lt;i&gt;</code> tag with the appropriate classes:</p>
+      
+      <pre><code>&lt;i class="izambezi econet-zw"&gt;&lt;/i&gt;
+&lt;i class="izambezi ecocash"&gt;&lt;/i&gt;
+&lt;i class="izambezi cbz"&gt;&lt;/i&gt;</code><button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+      
+      <div class="demo-box">
+        <i class="izambezi econet-zw"></i>
+        <i class="izambezi ecocash"></i>
+        <i class="izambezi cbz"></i>
+      </div>
+      
+      <h3>Class Structure</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Class</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>.izambezi</code></td>
+            <td>Base class (required) - default size</td>
+          </tr>
+          <tr>
+            <td><code>.[icon-name]</code></td>
+            <td>Specific icon class (e.g., <code>.econet-zw</code>)</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    
+    <!-- Sizes -->
+    <section id="sizes">
+      <h2>Sizes</h2>
+      <p>Control icon size using size modifier classes:</p>
+      
+      <pre><code>&lt;i class="izambezi-sm muzinda"&gt;&lt;/i&gt;   &lt;!-- Small --&gt;
+&lt;i class="izambezi muzinda"&gt;&lt;/i&gt;      &lt;!-- Default --&gt;
+&lt;i class="izambezi-lg muzinda"&gt;&lt;/i&gt;   &lt;!-- Large --&gt;
+&lt;i class="izambezi-xl muzinda"&gt;&lt;/i&gt;   &lt;!-- Extra Large --&gt;
+&lt;i class="izambezi-2x muzinda"&gt;&lt;/i&gt;   &lt;!-- 2x --&gt;
+&lt;i class="izambezi-3x muzinda"&gt;&lt;/i&gt;   &lt;!-- 3x --&gt;</code><button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+      
+      <div class="demo-box">
+        <i class="izambezi-sm muzinda"></i>
+        <i class="izambezi muzinda"></i>
+        <i class="izambezi-lg muzinda"></i>
+        <i class="izambezi-xl muzinda"></i>
+      </div>
+      
+      <table>
+        <thead>
+          <tr>
+            <th>Class</th>
+            <th>Size</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>.izambezi-sm</code></td><td>1.5em</td></tr>
+          <tr><td><code>.izambezi</code></td><td>2.5em (default)</td></tr>
+          <tr><td><code>.izambezi-lg</code></td><td>3.5em</td></tr>
+          <tr><td><code>.izambezi-xl</code></td><td>5em</td></tr>
+          <tr><td><code>.izambezi-2x</code></td><td>2em</td></tr>
+          <tr><td><code>.izambezi-3x</code></td><td>3em</td></tr>
+          <tr><td><code>.izambezi-4x</code></td><td>4em</td></tr>
+          <tr><td><code>.izambezi-5x</code></td><td>5em</td></tr>
+        </tbody>
+      </table>
+    </section>
+    
+    <!-- Animations -->
+    <section id="animations">
+      <h2>Animations</h2>
+      <p>Add animations using the <code>.animated</code> class along with an animation name:</p>
+      
+      <pre><code>&lt;!-- Basic animation --&gt;
+&lt;i class="izambezi econet-zw animated pulse"&gt;&lt;/i&gt;
+
+&lt;!-- Infinite animation --&gt;
+&lt;i class="izambezi econet-zw animated infinite bounce"&gt;&lt;/i&gt;
+
+&lt;!-- With speed modifier --&gt;
+&lt;i class="izambezi econet-zw animated pulse faster"&gt;&lt;/i&gt;
+
+&lt;!-- With delay --&gt;
+&lt;i class="izambezi econet-zw animated fadeIn delay-2s"&gt;&lt;/i&gt;</code><button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+      
+      <div class="demo-box">
+        <i class="izambezi-lg econet-zw animated infinite pulse"></i>
+        <i class="izambezi-lg ecocash animated infinite bounce"></i>
+        <i class="izambezi-lg cbz animated infinite heartBeat"></i>
+        <i class="izambezi-lg delta animated infinite flash"></i>
+      </div>
+      
+      <h3>Available Animations</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Class</th>
+            <th>Effect</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>.bounce</code></td><td>Bouncing effect</td></tr>
+          <tr><td><code>.flash</code></td><td>Flashing/blinking</td></tr>
+          <tr><td><code>.pulse</code></td><td>Pulsing scale effect</td></tr>
+          <tr><td><code>.heartBeat</code></td><td>Heartbeat effect</td></tr>
+          <tr><td><code>.bounceIn</code></td><td>Bounce in entrance</td></tr>
+          <tr><td><code>.fadeIn</code></td><td>Fade in entrance</td></tr>
+          <tr><td><code>.fadeInUp</code></td><td>Fade in from bottom</td></tr>
+          <tr><td><code>.fadeInDown</code></td><td>Fade in from top</td></tr>
+          <tr><td><code>.zoomIn</code></td><td>Zoom in entrance</td></tr>
+          <tr><td><code>.shake</code></td><td>Shaking effect</td></tr>
+          <tr><td><code>.wobble</code></td><td>Wobbling effect</td></tr>
+          <tr><td><code>.tada</code></td><td>Attention-grabbing</td></tr>
+        </tbody>
+      </table>
+      
+      <h3>Animation Modifiers</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Class</th>
+            <th>Effect</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>.infinite</code></td><td>Loop animation forever</td></tr>
+          <tr><td><code>.faster</code></td><td>0.5s duration</td></tr>
+          <tr><td><code>.fast</code></td><td>0.8s duration</td></tr>
+          <tr><td><code>.slow</code></td><td>2s duration</td></tr>
+          <tr><td><code>.slower</code></td><td>3s duration</td></tr>
+          <tr><td><code>.delay-1s</code></td><td>1 second delay</td></tr>
+          <tr><td><code>.delay-2s</code></td><td>2 second delay</td></tr>
+          <tr><td><code>.delay-3s</code></td><td>3 second delay</td></tr>
+          <tr><td><code>.delay-4s</code></td><td>4 second delay</td></tr>
+          <tr><td><code>.delay-5s</code></td><td>5 second delay</td></tr>
+        </tbody>
+      </table>
+    </section>
+    
+    <!-- Transforms -->
+    <section id="transforms">
+      <h2>Transforms</h2>
+      <p>Rotate and flip icons using transform classes:</p>
+      
+      <pre><code>&lt;i class="izambezi zw-bird"&gt;&lt;/i&gt;
+&lt;i class="izambezi zw-bird izambezi-rotate-90"&gt;&lt;/i&gt;
+&lt;i class="izambezi zw-bird izambezi-rotate-180"&gt;&lt;/i&gt;
+&lt;i class="izambezi zw-bird izambezi-flip-horizontal"&gt;&lt;/i&gt;</code><button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+      
+      <div class="demo-box">
+        <i class="izambezi-lg zw-bird"></i>
+        <i class="izambezi-lg zw-bird izambezi-rotate-90"></i>
+        <i class="izambezi-lg zw-bird izambezi-rotate-180"></i>
+        <i class="izambezi-lg zw-bird izambezi-flip-horizontal"></i>
+      </div>
+      
+      <h3>Spinning Icons</h3>
+      <pre><code>&lt;i class="izambezi econet-zw izambezi-spin"&gt;&lt;/i&gt;
+&lt;i class="izambezi econet-zw izambezi-pulse"&gt;&lt;/i&gt;</code><button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+      
+      <div class="demo-box">
+        <i class="izambezi-lg econet-zw izambezi-spin"></i>
+        <i class="izambezi-lg netone izambezi-pulse"></i>
+      </div>
+    </section>
+    
+    <!-- JavaScript API -->
+    <section id="javascript">
+      <h2>JavaScript API</h2>
+      <p>For advanced use cases, iZambezi provides an optional JavaScript API:</p>
+      
+      <pre><code>import IZambezi from 'izambezi';
+
+// Create an instance
+const iz = new IZambezi();
+
+// Get all available icons
+const icons = iz.getIcons();
+
+// Search icons
+const banks = iz.searchIcons('bank');
+const universities = iz.getIconsByCategory('university');
+
+// Create an icon element programmatically
+const icon = iz.createIcon('econet-zw', {
+  size: 'lg',
+  animated: true,
+  animation: 'pulse',
+  infinite: true
+});
+document.body.appendChild(icon);
+
+// Get HTML string
+const html = iz.createIconHTML('ecocash', { size: 'xl' });
+
+// Auto-replace data attributes
+// &lt;span data-izambezi="cbz" data-size="lg" data-animated&gt;&lt;/span&gt;
+iz.init();</code><button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+      
+      <h3>Data Attribute Usage</h3>
+      <p>You can use data attributes for declarative icon insertion:</p>
+      <pre><code>&lt;!-- Basic usage --&gt;
+&lt;span data-izambezi="econet-zw"&gt;&lt;/span&gt;
+
+&lt;!-- With options --&gt;
+&lt;span data-izambezi="ecocash" 
+      data-size="lg" 
+      data-animated 
+      data-animation="pulse"
+      data-infinite&gt;&lt;/span&gt;
+
+&lt;script&gt;
+  const iz = new IZambezi();
+  iz.init(); // Replaces all data-izambezi elements
+&lt;/script&gt;</code><button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+    </section>
+    
+    <!-- Browser Support -->
+    <section id="browser-support">
+      <h2>Browser Support</h2>
+      <p>iZambezi.css works in all modern browsers and IE9+:</p>
+      <ul>
+        <li>Chrome (latest)</li>
+        <li>Firefox (latest)</li>
+        <li>Safari (latest)</li>
+        <li>Edge (latest)</li>
+        <li>Opera (latest)</li>
+        <li>Internet Explorer 9+</li>
+      </ul>
+      <p>Animations respect <code>prefers-reduced-motion</code> for accessibility.</p>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer>
+    <p>Made with ❤️ in Zimbabwe</p>
+    <p>
+      <a href="https://github.com/johnmugabe/izambezi">GitHub</a> · 
+      <a href="https://twitter.com/johnmugabe8">Twitter</a> · 
+      MIT License
+    </p>
+  </footer>
+  
+  <script>
+    function copyCode(btn) {
+      const pre = btn.parentElement;
+      const code = pre.querySelector('code');
+      navigator.clipboard.writeText(code.textContent).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 2000);
+      });
+    }
+  </script>
 </body>
 </html>

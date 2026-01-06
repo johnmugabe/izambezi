@@ -1,23 +1,400 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://johnmugabe.github.io/izambezi/izambezi.min.css">
-    <title>Hello, world!</title>
-  </head>
-  <body>
-    <h1>Example</h1>
-    <i class="izambezi afdis"></i>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iZambezi.css Examples</title>
+  
+  <!-- iZambezi CSS - CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/izambezi@latest/dist/izambezi.min.css">
+  
+  <!-- Or use local version -->
+  <!-- <link rel="stylesheet" href="izambezi.min.css"> -->
+  
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      color: #333;
+    }
+    
+    h1 {
+      color: #1bc1a1;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 0.5rem;
+    }
+    
+    h2 {
+      color: #667eea;
+      margin-top: 2rem;
+    }
+    
+    .example-section {
+      background: #f8f9fa;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 1rem 0;
+    }
+    
+    .example-section h3 {
+      margin-top: 0;
+      color: #42b983;
+    }
+    
+    .demo-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    
+    .demo-item {
+      text-align: center;
+      padding: 1rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .demo-item small {
+      display: block;
+      margin-top: 0.5rem;
+      color: #666;
+      font-size: 0.8rem;
+    }
+    
+    code {
+      background: #e8f5f2;
+      padding: 0.2em 0.4em;
+      border-radius: 3px;
+      font-size: 0.9em;
+      color: #1bc1a1;
+    }
+    
+    pre {
+      background: #2d3748;
+      color: #e2e8f0;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+    
+    pre code {
+      background: none;
+      color: inherit;
+    }
+    
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+      gap: 0.5rem;
+    }
+    
+    .icon-grid .demo-item {
+      padding: 0.75rem;
+    }
+    
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    
+    .card h4 {
+      margin: 1rem 0 0.5rem;
+    }
+    
+    .card p {
+      color: #666;
+      font-size: 0.9rem;
+    }
+    
+    .btn-group {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin: 1rem 0;
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    
+    .btn-primary {
+      background: #667eea;
+      color: white;
+    }
+    
+    .btn-success {
+      background: #1bc1a1;
+      color: white;
+    }
+    
+    .btn-danger {
+      background: #e74c3c;
+      color: white;
+    }
+    
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    
+    footer {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid #eee;
+      text-align: center;
+      color: #666;
+    }
+    
+    footer a {
+      color: #1bc1a1;
+    }
+  </style>
+</head>
+<body>
+  <h1>🇿🇼 iZambezi.css Examples</h1>
+  <p>A lightweight CSS library for Zimbabwe's popular logos. Below are examples of various use cases.</p>
+  
+  <!-- Basic Usage -->
+  <h2>1. Basic Usage</h2>
+  <div class="example-section">
+    <h3>Simple Icons</h3>
+    <div class="demo-row">
+      <div class="demo-item">
+        <i class="izambezi econet-zw"></i>
+        <small>Econet</small>
+      </div>
+      <div class="demo-item">
+        <i class="izambezi ecocash"></i>
+        <small>Ecocash</small>
+      </div>
+      <div class="demo-item">
+        <i class="izambezi cbz"></i>
+        <small>CBZ</small>
+      </div>
+      <div class="demo-item">
+        <i class="izambezi delta"></i>
+        <small>Delta</small>
+      </div>
+      <div class="demo-item">
+        <i class="izambezi zw-bird"></i>
+        <small>Zimbabwe Bird</small>
+      </div>
+    </div>
+    <pre><code>&lt;i class="izambezi econet-zw"&gt;&lt;/i&gt;
+&lt;i class="izambezi ecocash"&gt;&lt;/i&gt;
+&lt;i class="izambezi cbz"&gt;&lt;/i&gt;</code></pre>
+  </div>
+  
+  <!-- Sizes -->
+  <h2>2. Icon Sizes</h2>
+  <div class="example-section">
+    <h3>Size Variations</h3>
+    <div class="demo-row">
+      <div class="demo-item">
+        <i class="izambezi-sm muzinda"></i>
+        <small>.izambezi-sm</small>
+      </div>
+      <div class="demo-item">
+        <i class="izambezi muzinda"></i>
+        <small>.izambezi</small>
+      </div>
+      <div class="demo-item">
+        <i class="izambezi-lg muzinda"></i>
+        <small>.izambezi-lg</small>
+      </div>
+      <div class="demo-item">
+        <i class="izambezi-xl muzinda"></i>
+        <small>.izambezi-xl</small>
+      </div>
+    </div>
+    <pre><code>&lt;i class="izambezi-sm muzinda"&gt;&lt;/i&gt;
+&lt;i class="izambezi muzinda"&gt;&lt;/i&gt;
+&lt;i class="izambezi-lg muzinda"&gt;&lt;/i&gt;
+&lt;i class="izambezi-xl muzinda"&gt;&lt;/i&gt;</code></pre>
+  </div>
+  
+  <!-- Animations -->
+  <h2>3. Animations</h2>
+  <div class="example-section">
+    <h3>Animated Icons</h3>
+    <div class="demo-row">
+      <div class="demo-item">
+        <i class="izambezi-lg econet-zw animated infinite pulse"></i>
+        <small>.pulse</small>
+      </div>
+      <div class="demo-item">
+        <i class="izambezi-lg ecocash animated infinite bounce"></i>
+        <small>.bounce</small>
+      </div>
+      <div class="demo-item">
+        <i class="izambezi-lg cbz animated infinite heartBeat"></i>
+        <small>.heartBeat</small>
+      </div>
+      <div class="demo-item">
+        <i class="izambezi-lg delta animated infinite flash"></i>
+        <small>.flash</small>
+      </div>
+      <div class="demo-item">
+        <i class="izambezi-lg netone animated infinite shake"></i>
+        <small>.shake</small>
+      </div>
+      <div class="demo-item">
+        <i class="izambezi-lg telecel animated infinite wobble"></i>
+        <small>.wobble</small>
+      </div>
+    </div>
+    <pre><code>&lt;i class="izambezi econet-zw animated infinite pulse"&gt;&lt;/i&gt;
+&lt;i class="izambezi ecocash animated infinite bounce"&gt;&lt;/i&gt;
+&lt;i class="izambezi cbz animated infinite heartBeat"&gt;&lt;/i&gt;</code></pre>
+  </div>
+  
+  <!-- Transforms -->
+  <h2>4. Transforms & Spinning</h2>
+  <div class="example-section">
+    <h3>Rotations & Flips</h3>
+    <div class="demo-row">
+      <div class="demo-item">
+        <i class="izambezi-lg zw-bird"></i>
+        <small>Normal</small>
+      </div>
+      <div class="demo-item">
+        <i class="izambezi-lg zw-bird izambezi-rotate-90"></i>
+        <small>90°</small>
+      </div>
+      <div class="demo-item">
+        <i class="izambezi-lg zw-bird izambezi-rotate-180"></i>
+        <small>180°</small>
+      </div>
+      <div class="demo-item">
+        <i class="izambezi-lg zw-bird izambezi-flip-horizontal"></i>
+        <small>Flip H</small>
+      </div>
+      <div class="demo-item">
+        <i class="izambezi-lg econet-zw izambezi-spin"></i>
+        <small>.izambezi-spin</small>
+      </div>
+    </div>
+    <pre><code>&lt;i class="izambezi zw-bird izambezi-rotate-90"&gt;&lt;/i&gt;
+&lt;i class="izambezi econet-zw izambezi-spin"&gt;&lt;/i&gt;</code></pre>
+  </div>
+  
+  <!-- Practical Examples -->
+  <h2>5. Practical Examples</h2>
+  
+  <!-- Buttons with Icons -->
+  <div class="example-section">
+    <h3>Buttons with Icons</h3>
+    <div class="btn-group">
+      <a href="#" class="btn btn-success">
+        <i class="izambezi-sm ecocash"></i>
+        Pay with Ecocash
+      </a>
+      <a href="#" class="btn btn-primary">
+        <i class="izambezi-sm econet-zw"></i>
+        Econet
+      </a>
+      <a href="#" class="btn btn-danger">
+        <i class="izambezi-sm telecel"></i>
+        Telecel
+      </a>
+    </div>
+    <pre><code>&lt;a href="#" class="btn"&gt;
+  &lt;i class="izambezi-sm ecocash"&gt;&lt;/i&gt;
+  Pay with Ecocash
+&lt;/a&gt;</code></pre>
+  </div>
+  
+  <!-- Cards -->
+  <div class="example-section">
+    <h3>Service Cards</h3>
+    <div class="cards">
+      <div class="card">
+        <i class="izambezi-xl cbz animated pulse"></i>
+        <h4>CBZ Bank</h4>
+        <p>Commercial Bank of Zimbabwe - Your trusted banking partner.</p>
+      </div>
+      <div class="card">
+        <i class="izambezi-xl old-mutual animated pulse"></i>
+        <h4>Old Mutual</h4>
+        <p>Financial planning and insurance solutions.</p>
+      </div>
+      <div class="card">
+        <i class="izambezi-xl zw-university animated pulse"></i>
+        <h4>University of Zimbabwe</h4>
+        <p>Leading institution of higher learning.</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Icon Grid -->
+  <h2>6. Sample Icon Grid</h2>
+  <div class="example-section">
+    <h3>Banks & Financial Services</h3>
+    <div class="icon-grid">
+      <div class="demo-item"><i class="izambezi cbz"></i><small>cbz</small></div>
+      <div class="demo-item"><i class="izambezi fbc"></i><small>fbc</small></div>
+      <div class="demo-item"><i class="izambezi posb"></i><small>posb</small></div>
+      <div class="demo-item"><i class="izambezi zb"></i><small>zb</small></div>
+      <div class="demo-item"><i class="izambezi stanchart"></i><small>stanchart</small></div>
+      <div class="demo-item"><i class="izambezi old-mutual"></i><small>old-mutual</small></div>
+      <div class="demo-item"><i class="izambezi ecocash"></i><small>ecocash</small></div>
+      <div class="demo-item"><i class="izambezi steward-bank"></i><small>steward-bank</small></div>
+    </div>
+    
+    <h3 style="margin-top: 1.5rem;">Universities</h3>
+    <div class="icon-grid">
+      <div class="demo-item"><i class="izambezi zw-university"></i><small>zw-university</small></div>
+      <div class="demo-item"><i class="izambezi nust"></i><small>nust</small></div>
+      <div class="demo-item"><i class="izambezi hit"></i><small>hit</small></div>
+      <div class="demo-item"><i class="izambezi africa-university"></i><small>africa-university</small></div>
+      <div class="demo-item"><i class="izambezi midlands-university"></i><small>midlands-university</small></div>
+      <div class="demo-item"><i class="izambezi great-zw-university"></i><small>great-zw-university</small></div>
+    </div>
+    
+    <h3 style="margin-top: 1.5rem;">Telecoms</h3>
+    <div class="icon-grid">
+      <div class="demo-item"><i class="izambezi econet-zw"></i><small>econet-zw</small></div>
+      <div class="demo-item"><i class="izambezi netone"></i><small>netone</small></div>
+      <div class="demo-item"><i class="izambezi telecel"></i><small>telecel</small></div>
+      <div class="demo-item"><i class="izambezi telone"></i><small>telone</small></div>
+      <div class="demo-item"><i class="izambezi liquid"></i><small>liquid</small></div>
+      <div class="demo-item"><i class="izambezi zol"></i><small>zol</small></div>
+    </div>
+  </div>
+  
+  <footer>
+    <p>
+      <strong>iZambezi.css</strong> — CSS library for Zimbabwe's popular logos<br>
+      <a href="https://github.com/johnmugabe/izambezi">GitHub</a> · 
+      <a href="docs.html">Documentation</a> · 
+      MIT License
+    </p>
+  </footer>
+</body>
 </html>

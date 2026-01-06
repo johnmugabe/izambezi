@@ -1,0 +1,122 @@
+// ============================================
+// iZambezi Base Styles
+// ============================================
+
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// Base icon class
+.izambezi,
+.izambezi-sm,
+.izambezi-lg,
+.izambezi-xl,
+.izambezi-2x,
+.izambezi-3x,
+.izambezi-4x,
+.izambezi-5x,
+[class*="izambezi-"] {
+  @include izambezi-icon-base;
+}
+
+// Size variations
+.izambezi {
+  @include izambezi-size($izambezi-size-default);
+}
+
+.izambezi-sm {
+  @include izambezi-size($izambezi-size-sm);
+}
+
+.izambezi-lg {
+  @include izambezi-size($izambezi-size-lg);
+}
+
+.izambezi-xl {
+  @include izambezi-size($izambezi-size-xl);
+}
+
+// Multiplier sizes (like Font Awesome)
+.izambezi-2x {
+  @include izambezi-size($izambezi-size-2x);
+}
+
+.izambezi-3x {
+  @include izambezi-size($izambezi-size-3x);
+}
+
+.izambezi-4x {
+  @include izambezi-size($izambezi-size-4x);
+}
+
+.izambezi-5x {
+  @include izambezi-size($izambezi-size-5x);
+}
+
+// Fixed width for consistent alignment
+.izambezi-fw {
+  width: 1.28571429em;
+  text-align: center;
+}
+
+// List icons
+.izambezi-ul {
+  padding-left: 0;
+  margin-left: 2.14285714em;
+  list-style-type: none;
+  
+  > li {
+    position: relative;
+  }
+}
+
+.izambezi-li {
+  position: absolute;
+  left: -2.14285714em;
+  width: 2.14285714em;
+  top: 0.14285714em;
+  text-align: center;
+}
+
+// Spinning icons
+.izambezi-spin {
+  animation: izambezi-spin 2s infinite linear;
+}
+
+.izambezi-pulse {
+  animation: izambezi-spin 1s infinite steps(8);
+}
+
+@keyframes izambezi-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// Rotations
+.izambezi-rotate-90 {
+  transform: rotate(90deg);
+}
+
+.izambezi-rotate-180 {
+  transform: rotate(180deg);
+}
+
+.izambezi-rotate-270 {
+  transform: rotate(270deg);
+}
+
+// Flips
+.izambezi-flip-horizontal {
+  transform: scaleX(-1);
+}
+
+.izambezi-flip-vertical {
+  transform: scaleY(-1);
+}
+
+.izambezi-flip-both {
+  transform: scale(-1);
+}

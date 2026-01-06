@@ -1,0 +1,40 @@
+// ============================================
+// iZambezi CSS Variables
+// ============================================
+
+// Icon Sizes
+$izambezi-size-sm: 1.5em !default;
+$izambezi-size-default: 2.5em !default;
+$izambezi-size-lg: 3.5em !default;
+$izambezi-size-xl: 5em !default;
+$izambezi-size-2x: 2em !default;
+$izambezi-size-3x: 3em !default;
+$izambezi-size-4x: 4em !default;
+$izambezi-size-5x: 5em !default;
+
+// Animation Speeds
+$izambezi-animation-duration: 1s !default;
+$izambezi-animation-fast: 0.8s !default;
+$izambezi-animation-faster: 0.5s !default;
+$izambezi-animation-slow: 2s !default;
+$izambezi-animation-slower: 3s !default;
+
+// Animation Delays
+$izambezi-delay-1s: 1s !default;
+$izambezi-delay-2s: 2s !default;
+$izambezi-delay-3s: 3s !default;
+$izambezi-delay-4s: 4s !default;
+$izambezi-delay-5s: 5s !default;
+
+// Icon Path (relative from where CSS is loaded)
+$izambezi-icon-path: '../icons/' !default;
+
+// CSS Custom Properties (for runtime customization)
+:root {
+  --izambezi-size-sm: #{$izambezi-size-sm};
+  --izambezi-size-default: #{$izambezi-size-default};
+  --izambezi-size-lg: #{$izambezi-size-lg};
+  --izambezi-size-xl: #{$izambezi-size-xl};
+  --izambezi-animation-duration: #{$izambezi-animation-duration};
+  --izambezi-icon-path: '#{$izambezi-icon-path}';
+}
